@@ -1,7 +1,7 @@
 # Mahabharata Gods
 
 REST API to Calculate the popularity of Indian gods in Mahabharata book. 
-The goal of the project/challenge **Quarkus** Libraries.
+The goal of the project/challenge is to explore **Quarkus** Libraries.
 
 
 ## Pre-requisites
