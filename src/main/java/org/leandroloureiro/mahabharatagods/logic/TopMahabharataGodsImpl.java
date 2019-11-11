@@ -40,7 +40,7 @@ public class TopMahabharataGodsImpl implements TopMahabharataGods {
      * {@inheritDoc}
      */
     @Override
-    public List<God> getTopMahabharataGods() {
+    public CompletionStage<List<God>> getTopMahabharataGods() {
 
         final CompletionStage<String> mahabharataContent = mahabharataBook.getBookContent();
         final CompletionStage<List<String>> godList = indianGods.getGodList();
@@ -54,7 +54,7 @@ public class TopMahabharataGodsImpl implements TopMahabharataGods {
                 .limit(3)
                 .collect(Collectors.toList())
 
-        ).toCompletableFuture().join();
+        );
 
     }
 

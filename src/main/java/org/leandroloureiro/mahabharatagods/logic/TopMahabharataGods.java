@@ -4,6 +4,7 @@ package org.leandroloureiro.mahabharatagods.logic;
 import org.leandroloureiro.mahabharatagods.model.God;
 
 import java.util.List;
+import java.util.concurrent.CompletionStage;
 
 public interface TopMahabharataGods {
 
@@ -13,6 +14,6 @@ public interface TopMahabharataGods {
      *
      * @return the list of gods
      */
-    List<God> getTopMahabharataGods();
+    CompletionStage<List<God>> getTopMahabharataGods();
 
 }
