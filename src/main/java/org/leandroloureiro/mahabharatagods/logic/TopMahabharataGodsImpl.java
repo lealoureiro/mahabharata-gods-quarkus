@@ -53,12 +53,13 @@ public class TopMahabharataGodsImpl implements TopMahabharataGods {
                 .sorted(Comparator.comparingLong(God::getHitCount).reversed())
                 .limit(3)
                 .collect(Collectors.toList())
-
         );
 
     }
 
     private List<CompletionStage<Optional<God>>> checkGodsAndCount(final List<String> gods, final String mahabharata) {
+
+        LOG.info("Mahabharata book content loaded, size {} bytes.", mahabharata.getBytes().length);
 
         return gods.stream()
                 .map(god -> indianGod.getIndianGod(god)
