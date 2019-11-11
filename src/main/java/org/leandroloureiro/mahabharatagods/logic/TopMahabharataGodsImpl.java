@@ -54,7 +54,6 @@ public class TopMahabharataGodsImpl implements TopMahabharataGods {
                 .limit(3)
                 .collect(Collectors.toList())
         );
-
     }
 
     private List<CompletionStage<Optional<God>>> checkGodsAndCount(final List<String> gods, final String mahabharata) {
@@ -72,7 +71,6 @@ public class TopMahabharataGodsImpl implements TopMahabharataGods {
                             return Optional.empty();
                         }))
                 .collect(toList());
-
     }
 
     private God countAppearances(final String god, final String mahabharata) {
