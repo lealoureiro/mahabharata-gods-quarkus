@@ -62,8 +62,14 @@ public class TopMahabharataGodsImpl implements TopMahabharataGods {
 
         return gods.stream()
                 .map(god -> indianGod.getIndianGod(god)
-                        .thenApplyAsync(__ -> Optional.of(countAppearances(god, mahabharata)))
-                        .exceptionally(__ -> Optional.empty()))
+                        .thenApplyAsync(__ -> {
+                            LOG.info("Indian God {} is valid.", god);
+                            return Optional.of(countAppearances(god, mahabharata));
+                        })
+                        .exceptionally(__ -> {
+                            LOG.warn("Indian God {} not valid!", god);
+                            return Optional.empty();
+                        }))
                 .collect(toList());
 
     }
