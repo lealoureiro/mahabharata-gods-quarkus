@@ -6,8 +6,8 @@ The goal of the project/challenge is to explore **Quarkus** Libraries.
 
 ## Pre-requisites
 
-- Java 8
-- httpie (Optional for testing)
+- Java 11
+- httpie (optional for testing)
 
 ## Build
 
@@ -29,5 +29,5 @@ http :8080/top-gods
 ## Native Image with Docker 
 ```bash
 docker build -t mahabharata-gods-quarkus .
-docker run -p8080:8080 mahabharata-gods-quarkus:latest
+docker run --rm -p8080:8080 mahabharata-gods-quarkus:latest
 ```
