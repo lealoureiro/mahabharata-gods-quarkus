@@ -14,12 +14,15 @@ USER quarkus
 RUN mvn -f /usr/src/app/pom.xml -Pnative clean package
 
 ## Stage 2 : create the docker final image
-FROM debian:stable-slim AS build-env
+FROM registry.access.redhat.com/ubi8/ubi-minimal
 
-FROM gcr.io/distroless/base
 WORKDIR /work/
-COPY --from=build-env /lib/x86_64-linux-gnu/libz.so.1 /lib/x86_64-linux-gnu/libz.so.1
+
 COPY --from=build /usr/src/app/target/*-runner /work/application
 COPY --from=build /tmp/ssl-libs/ /work/
+
+RUN chmod 775 /work
+
 EXPOSE 8080
+
 CMD ["./application", "-Dquarkus.http.host=0.0.0.0", "-Djava.library.path=/work/lib", "-Djavax.net.ssl.trustStore=/work/cacerts"]
