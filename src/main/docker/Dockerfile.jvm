@@ -7,7 +7,7 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.jvm -t quarkus/mahabharata-gods-quarkus-jvm .
+# docker build -f src/main/docker/Dockerfile.jvm -t mahabharata-gods-quarkus-jvm .
 #
 # Then run the container using:
 #
