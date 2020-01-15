@@ -28,6 +28,6 @@ http :8080/top-gods
 
 ## Native Image with Docker 
 ```bash
-docker build -t mahabharata-gods-quarkus .
+docker build -f src/main/docker/Dockerfile.multistage -t mahabharata-gods-quarkus .
 docker run -p8080:8080 mahabharata-gods-quarkus:latest
 ```
