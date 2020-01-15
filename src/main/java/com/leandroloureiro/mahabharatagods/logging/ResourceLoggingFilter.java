@@ -1,4 +1,4 @@
-package org.leandroloureiro.mahabharatagods.resources;
+package com.leandroloureiro.mahabharatagods.logging;
 
 import io.vertx.core.http.HttpServerRequest;
 import org.slf4j.Logger;
@@ -11,9 +11,9 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-public class LoggingFilter implements ContainerRequestFilter {
+public class ResourceLoggingFilter implements ContainerRequestFilter {
 
-    private static final Logger LOG = LoggerFactory.getLogger(LoggingFilter.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ResourceLoggingFilter.class);
 
     @Context
     UriInfo info;
@@ -30,4 +30,5 @@ public class LoggingFilter implements ContainerRequestFilter {
 
         LOG.info("Request {} {} from IP {}.", method, path, address);
     }
+
 }
