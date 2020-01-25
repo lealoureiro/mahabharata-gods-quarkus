@@ -1,6 +1,11 @@
 package org.leandroloureiro.mahabharatagods.service;
 
 
+import com.leandroloureiro.mahabharatagods.logging.IndianGodsLoggingFilter;
+import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
+import org.eclipse.microprofile.faulttolerance.Retry;
+import org.eclipse.microprofile.faulttolerance.Timeout;
+import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import javax.ws.rs.GET;
@@ -12,6 +17,10 @@ import java.util.concurrent.CompletionStage;
 
 
 @RegisterRestClient
+@CircuitBreaker(requestVolumeThreshold = 5, failureRatio = 0.2, delay = 1000)
+@Timeout(5000)
+@Retry(maxRetries = 1)
+@RegisterProvider(IndianGodsLoggingFilter.class)
 public interface IndianGods {
 
     /**
