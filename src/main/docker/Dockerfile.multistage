@@ -8,6 +8,7 @@ USER quarkus
 
 COPY pom.xml .
 RUN mvn dependency:resolve
+RUN mvn dependency:resolve-plugins
 RUN mvn dependency:go-offline
 
 COPY src src
