@@ -24,9 +24,9 @@ public class ResourceLoggingFilter implements ContainerRequestFilter {
     @Override
     public void filter(final ContainerRequestContext context) {
 
-        final String method = context.getMethod();
-        final String path = info.getPath();
-        final String address = request.remoteAddress().toString();
+        final var method = context.getMethod();
+        final var path = info.getPath();
+        final var address = request.remoteAddress().toString();
 
         LOG.info("Request {} {} from IP {}.", method, path, address);
     }

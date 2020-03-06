@@ -31,7 +31,7 @@ public class God {
             return false;
         }
 
-        final God god = (God) o;
+        final var god = (God) o;
 
         return hitCount == god.hitCount && Objects.equals(name, god.name);
     }

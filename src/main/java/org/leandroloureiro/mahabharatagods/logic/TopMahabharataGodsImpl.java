@@ -42,8 +42,8 @@ public class TopMahabharataGodsImpl implements TopMahabharataGods {
     @Override
     public CompletionStage<List<God>> getTopMahabharataGods() {
 
-        final CompletionStage<String> mahabharataContent = mahabharataBook.getBookContent();
-        final CompletionStage<List<String>> godList = indianGods.getGodList();
+        final var mahabharataContent = mahabharataBook.getBookContent();
+        final var godList = indianGods.getGodList();
 
         return mahabharataContent.thenCombineAsync(godList, (mahabharata, gods) -> checkGodsAndCount(gods, mahabharata)
                 .stream()

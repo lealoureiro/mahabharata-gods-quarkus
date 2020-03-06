@@ -6,8 +6,8 @@ The goal of the project/challenge is to explore **Quarkus** Libraries.
 
 ## Pre-requisites
 
-- Java 8
-- httpie (Optional for testing)
+- Java 11
+- httpie (optional for testing)
 
 ## Build
 
