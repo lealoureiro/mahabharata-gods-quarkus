@@ -1,7 +1,7 @@
 package org.leandroloureiro.mahabharatagods.service;
 
 
-import com.leandroloureiro.mahabharatagods.logging.IndianGodsLoggingFilter;
+import org.leandroloureiro.mahabharatagods.logging.IndianGodsLoggingFilter;
 import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;
@@ -29,7 +29,7 @@ public interface IndianGods {
      * @return the list with Indian Gods names
      */
     @GET
-    @Path("/jabrena/latency-problems/indian")
+    @Path("/gods.json")
     @Produces(MediaType.APPLICATION_JSON)
     CompletionStage<List<String>> getGodList();
 

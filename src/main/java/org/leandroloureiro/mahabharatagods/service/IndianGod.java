@@ -1,6 +1,6 @@
 package org.leandroloureiro.mahabharatagods.service;
 
-import com.leandroloureiro.mahabharatagods.logging.IndianGodLoggingFilter;
+import org.leandroloureiro.mahabharatagods.logging.IndianGodLoggingFilter;
 import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;

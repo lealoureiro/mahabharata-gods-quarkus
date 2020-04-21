@@ -1,6 +1,6 @@
 package org.leandroloureiro.mahabharatagods.service;
 
-import com.leandroloureiro.mahabharatagods.logging.MahabharataBookLoggingFilter;
+import org.leandroloureiro.mahabharatagods.logging.MahabharataBookLoggingFilter;
 import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;
@@ -26,7 +26,7 @@ public interface MahabharataBook {
      * @return the content of the book
      */
     @GET
-    @Path("/stream/TheMahabharataOfKrishna-dwaipayanaVyasa/MahabharataOfVyasa-EnglishTranslationByKMGanguli_djvu.txt")
+    @Path("/book.txt")
     @Produces(MediaType.TEXT_PLAIN)
     CompletionStage<String> getBookContent();
 

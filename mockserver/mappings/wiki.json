@@ -1,0 +1,45 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/wiki/Brahma"
+      },
+      "response": {
+        "status": 200
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/wiki/Rama"
+      },
+      "response": {
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/wiki/Hanuman"
+      },
+      "response": {
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/wiki/Lakshmi"
+      },
+      "response": {
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/wiki/Shiva"
+      },
+      "response": {
+      }
+    }
+  ]
+}

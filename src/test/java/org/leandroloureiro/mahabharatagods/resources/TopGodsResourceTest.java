@@ -31,10 +31,10 @@ class TopGodsResourceTest {
     @Test
     void testHelloEndpoint() {
 
-        wireMockServer.stubFor(get(urlEqualTo("/jabrena/latency-problems/indian"))
+        wireMockServer.stubFor(get(urlEqualTo("gods.json"))
                 .willReturn(aResponse().withHeader("Content-Type", "application/json")
                         .withStatus(200)
-                        .withBodyFile("indian.json")
+                        .withBodyFile("gods.json")
                         .withUniformRandomDelay(10, 5000)));
 
         wireMockServer.stubFor(get(urlEqualTo("/wiki/Brahma"))
@@ -62,10 +62,10 @@ class TopGodsResourceTest {
                         .withStatus(200)
                         .withUniformRandomDelay(10, 5000)));
 
-        wireMockServer.stubFor(get(urlEqualTo("/stream/TheMahabharataOfKrishna-dwaipayanaVyasa/MahabharataOfVyasa-EnglishTranslationByKMGanguli_djvu.txt"))
+        wireMockServer.stubFor(get(urlEqualTo("/book.txt"))
                 .willReturn(aResponse().withHeader("Content-Type", "text/plain")
                         .withStatus(200)
-                        .withBodyFile("MahabharataOfVyasa-EnglishTranslationByKMGanguli_djvu.txt")
+                        .withBodyFile("book.txt")
                         .withUniformRandomDelay(10, 5000)));
 
         given()
