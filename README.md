@@ -18,7 +18,7 @@ The goal of the project/challenge is to explore **Quarkus** Libraries.
 ## Prepare and run MockServer to stub necessary services:
 ```bash
 docker build -f mockserver/Dockerfile -t mahabharata-gods-quarkus-mockserver .
-docker run -i --rm -p 8081:8081 mahabharata-gods-quarkus-mockserver
+docker run -i --rm -p 5000:5000 mahabharata-gods-quarkus-mockserver
 ```
 
 
