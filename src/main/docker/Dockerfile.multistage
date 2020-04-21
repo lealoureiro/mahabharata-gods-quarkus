@@ -25,7 +25,7 @@ RUN mvn dependency:resolve-plugins
 RUN mvn dependency:go-offline
 
 COPY src src
-RUN mvn -Pnative clean package
+RUN mvn -Pnative clean package -Dquarkus.profile=docker
 
 ## Stage 2 : create the docker final image
 FROM registry.access.redhat.com/ubi8/ubi-minimal
