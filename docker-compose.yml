@@ -8,10 +8,10 @@ services:
     ports:
     - "8080:8080"
     image: mahabharata-gods-quarkus-jvm
-  quarkus-multistate:
+  quarkus-multistage:
     ports:
       - "8080:8080"
-    image: mahabharata-gods-quarkus-multistate
+    image: mahabharata-gods-quarkus-multistage
   quarkus-native:
     ports:
       - "8080:8080"
