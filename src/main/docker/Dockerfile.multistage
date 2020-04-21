@@ -1,3 +1,16 @@
+####
+# This Dockerfile is used in order to build a container that runs the Quarkus application in Native mode
+#
+# This is a multi stage build that uses a slimmer image base image with only needed tools to run the project
+#
+# docker build -f src/main/docker/Dockerfile.multistage -t mahabharata-gods-quarkus-multistage .
+#
+# Then run the container using:
+#
+# docker run -i --rm -p 8080:8080 mahabharata-gods-quarkus-jvm
+#
+####
+
 ## Stage 1 : build with maven builder image with native capabilities
 FROM quay.io/quarkus/centos-quarkus-maven:20.0.0-java11 AS build
 
